@@ -19,7 +19,7 @@ describe('Show User Profile', () => {
       password: 'test',
     });
 
-    const userExists = await showUserProfileUseCase.execute(user.id as string);
+    const userExists = await showUserProfileUseCase.execute(user.id!);
     expect(userExists).toEqual(user);
   });
 

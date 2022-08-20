@@ -27,7 +27,7 @@ describe('Create Statement', () => {
       email: 'test@email.com',
       password: 'password',
     });
-    user_id = user.id as string;
+    user_id = user.id!;
   });
 
   it('should be able to create an deposit statement', async () => {
