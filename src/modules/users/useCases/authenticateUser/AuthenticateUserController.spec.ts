@@ -14,7 +14,7 @@ describe('Authenticate User Controller', () => {
     const usersRepository = connection.getRepository(User);
     const user = usersRepository.create({
       name: 'test',
-      email: 'test@email.com',
+      email: 'authusertest@email.com',
       password: await hash('password', 8)
     });
 
@@ -29,7 +29,7 @@ describe('Authenticate User Controller', () => {
   it('should be able to authenticate an user', async () => {
     const response = await request(app).post('/api/v1/sessions').send({
       name: 'test',
-      email: 'test@email.com',
+      email: 'authusertest@email.com',
       password: 'password',
     });
 
@@ -49,7 +49,7 @@ describe('Authenticate User Controller', () => {
   it('should not be able to authenticate an user with incorrect password', async () => {
     const response = await request(app).post('/api/v1/sessions').send({
       name: 'test',
-      email: 'test@email.com',
+      email: 'authusertest@email.com',
       password: 'incorrect',
     });
 
